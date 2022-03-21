@@ -1,0 +1,12 @@
+// import export
+@import "color.scss";
+
+body {
+  font-family: Helvetica, sans-serif;
+  font-size: 18px;
+  color: $myBlue;
+}
+$myPink: #ee82ee;
+$myBlue: #4169e1;
+$myGreen: #8fbc8f;
+
