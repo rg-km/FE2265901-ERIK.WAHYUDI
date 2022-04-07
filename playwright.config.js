@@ -4,6 +4,7 @@ const { devices } = require('@playwright/test');
 
 /** @type {import('@playwright/test').PlaywrightTestConfig} */
 const config = {
+  timeout: 900000,
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,
   use: {
@@ -11,8 +12,8 @@ const config = {
   },
   projects: [
     {
-      name: 'firefox',
-      use: { ...devices['Desktop Firefox'] },
+      name: 'chrome',
+      use: { ...devices['Desktop Chrome'] },
     },
   ],
 };

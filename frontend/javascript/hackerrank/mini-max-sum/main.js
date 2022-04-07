@@ -13,8 +13,25 @@
 function miniMaxSum(arr) {
   // Write your code here
   // TODO: answer here
+  var sum = 0;
+  var min = 0;
+  var max = 0;
+  for (var i = 0; i < arr.length; i++){
+    sum += arr[i];
+  }
+  for (var i = 0; i < arr.length; i++){
+    if (arr[i] != Math.max(...arr)){
+      min += arr[i];
+    }
+  }
+  for (var i = 0; i < arr.length; i++){
+    if (arr[i] != Math.min(...arr)){
+      max += arr[i];
+    }
+  }
+  return min + ' ' + max;
 }
-
+ 
 function main() {
   //arr = readLine().split(' ');
   //arr = arr.map(Number);
@@ -22,7 +39,7 @@ function main() {
   let result = miniMaxSum(arr);
   console.log(result)
 }
-
+ 
 main(); // execute program
-
+ 
 module.exports = miniMaxSum

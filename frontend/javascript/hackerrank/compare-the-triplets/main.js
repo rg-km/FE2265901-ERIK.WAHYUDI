@@ -15,8 +15,16 @@
 // Full Problem: https://www.hackerrank.com/challenges/compare-the-triplets/problem
 
 function compareTriplets(a, b) {
-  // Write your code here
-  // TODO: answer here
+  var alice = 0;
+  var bob = 0;
+  for (var i = 0; i < a.length; i++) {
+    if (a[i] > b[i]) {
+      alice++;
+    } else if (a[i] < b[i]) {
+      bob++;
+    }
+  }
+  return [alice, bob];
 }
 function main() {
 

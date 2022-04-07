@@ -11,8 +11,13 @@
 // Full Problem: https://www.hackerrank.com/challenges/staircase/problem
 
 function staircase(n) {
-  // Write your code here
-  // TODO: answer here
+  let result = ''
+  for (let i = 0; i < n; i++) {
+    let spaces = ' '.repeat(n - i - 1)
+    let hashes = '#'.repeat(i + 1)
+    result += `${spaces}${hashes}\n`
+  }
+  return result
 }
 
 function main() {

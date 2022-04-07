@@ -37,6 +37,64 @@
 
 function fixData(line) {
   // TODO: answer here
+  let countVokal = 0;
+  let countKonsonan = 0;
+  let countVirus = 0;
+  let result = "";
+
+  for (let i = 0; i < line.length; i++) {
+    if (
+      line[i] === "a" ||
+      line[i] === "i" ||
+      line[i] === "u" ||
+      line[i] === "e" ||
+      line[i] === "o"
+    ) {
+      countVokal++;
+      // console.log(countVokal);
+    } else if (line[i] === "#") {
+      countVirus++;
+      // console.log(countVirus);
+    } else {
+      countKonsonan++;
+      // console.log(countKonsonan);
+    }
+  }
+
+  // jika jumlah konsonan lebih banyak dari jumlah vokal
+  if (countVokal < countKonsonan) {
+    for (let j = 0; j < line.length; j++) {
+      if (line[j] === "#") {
+        result += "a";
+        //   console.log(result);
+      } else {
+        result += line[j];
+        //   console.log(result);
+      }
+    }
+  } else if (countVokal > countKonsonan) {
+    // jika jumlah vokal lebih banyak dari jumlah konsonan
+    for (let k = 0; k < line.length; k++) {
+      if (line[k] === "#") {
+        result += "b";
+      } else {
+        result += line[k];
+      }
+    }
+  } else if (countVokal === countKonsonan) {
+    // jika jumlah vokal sama dengan jumlah konsonan
+    for (let l = 0; l < line.length; l++) {
+      if (line[l] === "#") {
+        result += "c";
+      } else {
+        result += line[l];
+      }
+    }
+  } else {
+    // jika tidak ada virus
+    result = line;
+  }
+  return result;
 }
 
 console.log(fixData('aoi#fdg#ue'))
