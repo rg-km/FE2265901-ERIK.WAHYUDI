@@ -9,6 +9,9 @@
  */
 const max = (...args) => {
   // TODO: answer here
+  return args.reduce((acc, curr) => {
+    return acc > curr ? acc : curr;
+  });
 };
 
 module.exports = max

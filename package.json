@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "main": "index.js",
   "repository": "https://github.com/ruang-guru/playground.git",
-  "author": "",
+  "author": "ErickWahyudy <erickwahyudy@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "postinstall": "playwright install firefox",
+    "postinstall": "playwright install chrome",
     "test": "jest",
     "test:cypress": "cypress run",
     "test:playwright": "playwright test",
