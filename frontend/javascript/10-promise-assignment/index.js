@@ -63,6 +63,30 @@ function promiseStarWarsData(url) {
 
 function getDataPeopleByIdWithFilms(peopleId) {
   // TODO: answer here
+  return new Promise((resolve, reject) => {
+    promiseStarWarsData(`https://swapi.dev/api/people/${peopleId}`)
+      .then((res) => {
+        let result = [];
+        let promise = [];
+
+        for (let i = 0; i < res.films.length; i++) {
+          promise.push(
+            new Promise((resolve, reject) => {
+              promiseStarWarsData(res.films[i]).then((response) =>
+                resolve({
+                  title: response.title,
+                  episode_id: response.episode_id,
+                })
+              );
+            })
+          );
+        }
+        Promise.all(promise).then((values) => {
+          resolve({ ...res, films: values });
+        });
+      })
+      .catch((err) => reject(err));
+  });
 }
 
 module.exports = { getDataPeopleByIdWithFilms };
