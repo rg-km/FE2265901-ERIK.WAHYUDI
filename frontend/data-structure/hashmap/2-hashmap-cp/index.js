@@ -17,6 +17,12 @@
 // Explanation: Jika ditata, "apple" dan "paddle" memiliki huruf-huruf yang berbeda
 
 function anagramChecker(str1, str2) {
+    for (let i = 0; i < str1.length; i++) {
+        if (str1.charAt(i) !== str2.charAt(i)) {
+            return false;
+        }
+    }
+    
     return true; // TODO: replace this
 }
 

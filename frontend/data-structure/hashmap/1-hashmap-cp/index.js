@@ -1,12 +1,26 @@
 function ageDistribution(persons) {
     let result = new Map();
     // TODO: answer here
+    for (let peson of persons) {
+        if (result.has(peson.age)) {
+            result.set(peson.age, result.get(peson.age) + 1);
+        } else {
+            result.set(peson.age, 1);
+        }
+    }
     return result
 }
 
 function groupByAge(persons) {
     let result = new Map();
     // TODO: answer here
+    for (let peson of persons) {
+        if (result.has(peson.age)) {
+            result.get(peson.age).push(peson);
+        } else {
+            result.set(peson.age, [peson]);
+        }
+    }
     return result
 }
 
