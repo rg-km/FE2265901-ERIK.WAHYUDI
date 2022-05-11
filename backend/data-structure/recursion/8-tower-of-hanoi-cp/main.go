@@ -1,4 +1,4 @@
-// ===============>>>> Game Tower of Hanoi: <<<<====================
+// ===============>>>> Game Tower of Hanoi: <====================
 // Tower of Hanoi adalah teka-teki matematika di mana kita memiliki tiga batang dan n piringan.
 // Tujuan dari teka-teki ini adalah untuk memindahkan seluruh tumpukan ke batang lain, dengan mematuhi aturan sederhana berikut:
 

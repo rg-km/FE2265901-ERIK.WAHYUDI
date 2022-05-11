@@ -1,4 +1,4 @@
-// |=======>>> Sessions <<<=======|
+// |=======>>> Sessions <=======|
 // Cara menyimpan data session cookies menggunakan gorilla/sessions package yang populer di Go.
 
 // Cookie adalah bagian kecil dari data yang disimpan di browser user dan dikirim ke server pada setiap request.
