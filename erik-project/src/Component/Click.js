@@ -1,9 +1,14 @@
-import React, { useState } from 'react'
-function CounterBtn() {
-  const [count, setCount] = useState(0)
+import React, { useState } from "react";
+
+const Click = () => {
+  const [count, setCount] = useState(0);
   return (
-    <button onClick={() => setCount(count + 1)}>
-      You clicked {count} times
-    </button>
-  )
-}
+    <div className="App">
+      <button onClick={() => setCount(count + 1)}>
+        You click {count} times
+      </button>
+    </div>
+  );
+};
+
+export default Click;

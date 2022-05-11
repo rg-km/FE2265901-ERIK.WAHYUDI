@@ -1,25 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
+import Click from "./Component/Click";
+import InputState from "./Component/InputState";
+import Effect from "./Component/Effect";
+import RandomQuote from "./Component/RandomQuote";
+import Counter from "./Component/Counter";
+import FirstComponent from "./Component/FirstComponent";
+import ListMap from "./Component/ListMap";
+import Air from "./Component/Air";
 
 const App = () => {
-  const user = {
-    avatarUrl: "https://www.w3schools.com/tags/img_girl.jpg",
-  };
-
-  const name = "andi";
-
-  const element = (
-    <div tabIndex="0">
-      <h1 className="title">Halo!</h1>
-      <h2>Senang melihatmu di sini.</h2>
-    </div>
-  );
-
   return (
     <div className="App">
-      <h1>Halo, nama saya {name}</h1>
-      <p>{2 + 2}</p>
-      <img src={user.avatarUrl} />
-      {element}
+      <Air />
     </div>
   );
 };
