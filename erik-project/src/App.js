@@ -8,12 +8,37 @@ import FirstComponent from "./Component/FirstComponent";
 import ListMap from "./Component/ListMap";
 import Air from "./Component/Air";
 
-const App = () => {
+const MultipleInputForm = () => {
+  const [formValues, setFormValues] = useState({"email":"", "password":""});
+  const handleFormChange = (event) => {
+      const newValue = event.target.value;
+      const name = event.target.name;
+      setFormValues(previousValues => {
+          return {
+              ...previousValues,
+              [name]: newValue 
+          }
+      })
+  }
   return (
-    <div className="App">
-      <Air />
-    </div>
-  );
-};
-
-export default App;
+      <form>
+          <label>
+              Email:
+              <input
+              name="email"
+              type="email"
+              value={formValues.email}
+              onChange={handleFormChange} />
+          </label>
+          <label>
+              Password:
+              <input
+              name="password"
+              type="password"
+              value={formValues.password}
+              onChange={handleFormChange} />
+          </label>
+      </form>
+  )
+}
+export default MultipleInputForm;
