@@ -4,7 +4,9 @@ import { LanguageContext } from '../../App';
 
 const Card = () =>{
     //buatlah variable untuk mengambil context dari text
-    // TODO: answer here
+        // TODO: answer here
+    const { text } = useContext(LanguageContext);
+
     return(
         <div className={styles['card']}>
             <div className={styles['card-image']}>

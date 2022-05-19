@@ -4,10 +4,14 @@ import { LanguageContext } from '../../App';
 
 const Dropdown = () =>{
     //buatlah variable untuk mengimport context text dan setLanguage
-    // TODO: answer here
+        // TODO: answer here
+    const { text, setLanguage } = useContext(LanguageContext);
+
     const handleSelectValueChange = (value) =>{
         //gunakanlah method ini untuk mengubah context language
         // TODO: answer here
+        setLanguage(value);
+        
     }
 
     return(

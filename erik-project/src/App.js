@@ -1,44 +1,30 @@
-import React, { useState } from "react";
-import Click from "./Component/Click";
-import InputState from "./Component/InputState";
-import Effect from "./Component/Effect";
-import RandomQuote from "./Component/RandomQuote";
-import Counter from "./Component/Counter";
-import FirstComponent from "./Component/FirstComponent";
-import ListMap from "./Component/ListMap";
-import Air from "./Component/Air";
+// src/App.js
+import React from "react";
+import { Routes, Route } from "react-router-dom";
+import "./App.css";
 
-const MultipleInputForm = () => {
-  const [formValues, setFormValues] = useState({"email":"", "password":""});
-  const handleFormChange = (event) => {
-      const newValue = event.target.value;
-      const name = event.target.name;
-      setFormValues(previousValues => {
-          return {
-              ...previousValues,
-              [name]: newValue 
-          }
-      })
-  }
-  return (
-      <form>
-          <label>
-              Email:
-              <input
-              name="email"
-              type="email"
-              value={formValues.email}
-              onChange={handleFormChange} />
-          </label>
-          <label>
-              Password:
-              <input
-              name="password"
-              type="password"
-              value={formValues.password}
-              onChange={handleFormChange} />
-          </label>
-      </form>
-  )
-}
-export default MultipleInputForm;
+const Home = () => (
+  <div>
+    <h1>Home</h1>
+    <Link to="/about">Go to About page</Link>
+  </div>
+)
+
+const About = () => (
+  <div>
+    <h1>About</h1>
+    <Link to="/">Go to Home page</Link>
+  </div>
+)
+
+const App = () => (
+  <div className="App">
+    <h1>Welcome to React Router!</h1>
+    <Routes>
+      <Route path="/" element={<div>Home</div>} />
+      <Route path="about" element={<div>About</div>} />
+    </Routes>
+  </div>
+);
+
+export default App;
