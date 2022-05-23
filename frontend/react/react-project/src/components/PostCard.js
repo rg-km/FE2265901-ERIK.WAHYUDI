@@ -11,7 +11,6 @@ import Profile from "./routes/Profile";
 // import SessionContext from "./context/SessionContext"
 
 function App() {
-
   // TODO: answer here
 
   return (
