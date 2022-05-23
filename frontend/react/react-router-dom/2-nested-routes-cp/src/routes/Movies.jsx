@@ -15,6 +15,7 @@ const Movies = () => {
       const { data } = await axios.get("https://swapi.dev/api/films", {
         signal: controller.signal,
       });
+      setMovies(data.results);
       // TODO: answer here
     } catch (error) {
       console.log(error);
@@ -52,6 +53,12 @@ const Movies = () => {
           {movies.length &&
             movies.map((movie, index) => (
               // TODO: answer here
+              <Link key={index} to={`/movies/${getID(movie.url)}`}>
+                <div className="card">
+                  <h2>{movie.title}</h2>
+                  <p>{movie.release_date}</p>
+                </div>
+              </Link>
             ))}
         </div>
       ) : (
