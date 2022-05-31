@@ -1,11 +1,10 @@
 // TODO: answer here
-import React, {useState} from 'react';
 import "../App.css"
 import "../index.css"
+
 export default function UploadForm({onSubmit}) {
   // TODO: answer here
-  return (
-  <div className="UploadForm">
+  return (<div className="UploadForm">
  <div className='uploadForm' aria-label='Upload Form'>
   <form onSubmit={onSubmit} aria-label="upload Form">
     <input type="text" aria-label='Caption Input' placeholder='caption'/>
@@ -14,4 +13,5 @@ export default function UploadForm({onSubmit}) {
   </form>
  </div>
  </div>
-  ) } 
+  )
+}

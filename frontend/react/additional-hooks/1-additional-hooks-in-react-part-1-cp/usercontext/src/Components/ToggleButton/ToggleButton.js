@@ -1,5 +1,5 @@
 import styles from './ToggleButton.module.scss';
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import { ThemeContext } from '../../App';
 
 
@@ -10,20 +10,28 @@ const ToggleButton = () =>{
     const changeTheme = (theme) =>{
         //mengubah tema dari toggleButton
         // TODO: answer here
-        if (theme === "dark") {
-            setTheme("light");
-        } else {
-            setTheme("dark");
+        try{
+            if(theme === 'light'){
+                setTheme('dark');
+            }else{
+                setTheme('light');
+            }
+        } catch (err) {
+            console.log(err);
         }
     }
 
     const renderToggleButtonText = (theme) =>{
         //mengubah tulisan dari toggleButton
         // TODO: answer here
-        if (theme === "dark") {
-            return "Light Mode";
-        } else {
-            return "Dark Mode";
+        try{
+            if(theme === 'light'){
+                return 'Toggle Dark Theme';
+            }else{
+                return 'Toggle Light Theme';
+            }
+        } catch (err) {
+            console.log(err);
         }
     }
 

@@ -13,8 +13,8 @@ const PlanetDetail = () => {
   const loadDetail = async () => {
     setLoading(true);
     try {
-      const url = /* beginanswer */ "https://swapi.dev/api/planets/" + id; /* endanswer "" */
-      const { data } = await axios.get(url, {
+      const url = /* beginanswer / "https://swapi.dev/api/planets/" + id; / endanswer "" */
+      { data } = await axios.get(url, {
         signal: controller.signal,
       });
       // TODO: answer here

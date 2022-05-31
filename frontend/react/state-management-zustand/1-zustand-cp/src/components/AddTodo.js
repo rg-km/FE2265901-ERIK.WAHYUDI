@@ -3,7 +3,7 @@ import { useState } from "react"
 import { HStack, Input, Button } from "@chakra-ui/react"
 
 export default function AddTodo() {
-  const { addTodo } = useTodoStore()
+  const { addTodo } = useTodoStore() 
   // TODO: answer here
 
   const [text, setText] = useState("")

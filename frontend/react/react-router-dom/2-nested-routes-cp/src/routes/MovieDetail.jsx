@@ -6,15 +6,15 @@ import BackButton from "../components/BackButton";
 const MovieDetail = () => {
   const [detail, setDetail] = useState(null);
   const [loading, setLoading] = useState(false);
-  // TODO: answer here
   const { id } = useParams();
+  // TODO: answer here
   const controller = new AbortController();
 
   const loadDetail = async () => {
     setLoading(true);
     try {
-      const url = /* beginanswer */ "https://swapi.dev/api/films/" + id; /* endanswer "" */
-      const { data } = await axios.get(url, {
+      const url = /* beginanswer / "https://swapi.dev/api/films/" + id; / endanswer "" */
+      { data } = await axios.get(url, {
         signal: controller.signal,
       });
       // TODO: answer here

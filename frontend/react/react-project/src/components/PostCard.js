@@ -1,40 +1,40 @@
-import "./App.css"
-import React from "react";
 // TODO: answer here
-import Navbar from "./components/Navbar"
-import PostCard from "./components/PostCard"
-import { Route, Routes } from "react-router-dom";
-import Home from "./routes/Home";
-import Profile from "./routes/Profile";
-// import Profile from "./components/Profile"
-// import UploadForm from "./components/UploadForm"
-// import SessionContext from "./context/SessionContext"
-
-function App() {
+import React, { useState } from "react"
+import LikeDislikeButon from "../components/LikeDislikeButton"
+ 
+export default function PostCard({ image, caption, username, userId, date }) {
   // TODO: answer here
-
+ 
+  // tidak perlu buat state nya disini
+  const [like] = useState(0);
+  const [dislike] = useState(0);
+  const [isLikedBtn] = useState(false);
+  const [isDislikedBtn, setIsDislikedBtn] = useState(false)
+ 
   return (
-    <div aria-label="App" className="App">
-      <h1 aria-label="App Title">IG Clone</h1>
-      
-    <div className="ImportItem">
-        <Navbar />
-        <PostCard />
+    <div className="post-card-component" aria-label="Post Card">
+      <div className="post-card-wrapper">
+        <section className="card-image">
+          <div>
+            <img src={image} alt="Post" aria-label="Post Image"/>
+          </div>
+        </section>
+        <section className="card-button">
+          {/* Bisa langsung isi disini saja */}
+          <LikeDislikeButon likeCount={200} dislikeCount={10} isLiked={true} isDisliked={true} />
+        </section>
+        <section className="card-detail">
+          <div>
+            <h2 className="card-name" aria-label="Post User Name">{username}</h2>
+          </div>
+          <div>
+            <p className="card-caption" aria-label="Post Caption">{caption}</p>
+          </div>
+        </section>
+        <section className="card-date">
+          <h3 aria-label="Post Date">{date}</h3>
+        </section>
+      </div>  
     </div>
-
-    <div className="routes" aria-label="routes">
-
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="Profile" element={<Profile />} />
-    </Routes>
-
-    </div>
-
-
-  </div>
-    
-  );
+  )
 }
-
-export default App
