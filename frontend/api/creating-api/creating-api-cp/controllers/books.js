@@ -53,9 +53,36 @@ export const getBook = (req, res) => {
 };
 
 export const deleteBook = (req, res) => {
+  const bookItem = books.find((book) => book.id == req.params.id);
+  if (bookItem) {
+    books = books.filter((book) => book.id != req.params.id);
+    res.status(200).json({
+      success: true,
+      message: `book with id ${req.params.id} deleted`,
+      data: bookItem
+    });
+  } else {
+    res.status(500).json({
+      message: `book with id ${req.params.id} not found`
+    });
+  }
   // TODO: answer here
 };
 
 export const updateBook = (req, res) => {
+  const bookItem = books.find((book) => book.id == req.params.id);
+  if (bookItem) {
+    const updatedBook = {
+      ...bookItem,
+      ...req.body
+    };
+    books = books.map((book) => (book.id == req.params.id ? updatedBook : book));
+
+    res.status(200).json({
+      success: true,
+      message: `book with id ${req.params.id} updated`,
+      data: updatedBook
+    });
+  }
   // TODO: answer here
 };

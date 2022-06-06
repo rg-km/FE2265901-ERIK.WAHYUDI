@@ -16,6 +16,11 @@ router.post("/", createBook);
 
 router.get("/:id", getBook);
 
+router.delete("/:id", deleteBook);
+
+router.patch("/:id", updateBook);
+
+
 // TODO: answer here
 
 export default router;
